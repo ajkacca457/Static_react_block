@@ -5,8 +5,10 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@import "variables.scss";
+
 .wp-block-create-block-static-react-block {
-	background-color: #21759b;
+	background-color: $main-color;
 	color: #fff;
 	padding: 2px;
 }

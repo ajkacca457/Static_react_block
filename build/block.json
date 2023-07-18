@@ -21,7 +21,9 @@
   "attributes": {
     "text": {
       "type": "string",
-      "default": "Hello World"
+      "default": "Hello World",
+      "source": "html",
+      "selector": "h2"
     }
   }
 }
