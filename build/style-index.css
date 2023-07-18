@@ -8,9 +8,21 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-create-block-static-react-block {
-  background-color: #ff0000;
-  color: #fff;
+  background-color: transparent;
+  color: #f00;
   padding: 2px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

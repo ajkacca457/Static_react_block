@@ -2,9 +2,11 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 
 export default function save({ attributes }) {
-	const { text } = attributes;
-	console.log(useBlockProps.save());
+	const { text, alignment } = attributes;
+	console.log(alignment);
 	return (
-		<RichText.Content {...useBlockProps.save()} tagName='h2' value={text} />
+		<RichText.Content {...useBlockProps.save({
+			className: `align-${alignment}`
+		})} tagName='h2' value={text} />
 	);
 }

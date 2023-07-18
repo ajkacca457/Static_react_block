@@ -9,6 +9,18 @@
 
 .wp-block-create-block-static-react-block {
 	background-color: $main-color;
-	color: #fff;
+	color: #f00;
 	padding: 2px;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
 }

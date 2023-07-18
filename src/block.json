@@ -17,9 +17,13 @@
 	"attributes": {
 		"text": {
 			"type": "string",
-			"default": "Hello World",
 			"source": "html",
 			"selector": "h2"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "left"
 		}
 	}
 }
+
