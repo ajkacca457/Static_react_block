@@ -51,10 +51,25 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-function Edit() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Static React Block – hello from the editor!', 'static-react-block'));
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    text
+  } = attributes;
+  console.log(text);
+  const changeText = newText => {
+    setAttributes({
+      text: newText
+    });
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
+    tagName: "h2",
+    onChange: changeText,
+    value: text
+  });
 }
 
 /***/ }),
@@ -104,6 +119,11 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./edit.js
    */
+  icon: {
+    src: 'smiley',
+    background: '#f03',
+    foreground: '#fff'
+  },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   /**
    * @see ./save.js
@@ -223,7 +243,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","supports":{"html":false},"textdomain":"static-react-block","editorScript":"file:./build/index.js","editorStyle":"file:./build/index.css","style":"file:./build/style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"text":{"type":"string","default":"Hello World"}}}');
 
 /***/ })
 
