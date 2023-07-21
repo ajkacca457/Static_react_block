@@ -4,7 +4,7 @@ import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { text, alignment } = attributes;
+	const { text, alignment, backgroundcolor } = attributes;
 
 	const changeText = (newText) => {
 		setAttributes({ text: newText });
@@ -12,6 +12,11 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const changeControl = (newAlignment) => {
 		setAttributes({ alignment: newAlignment });
+	};
+
+	const changeBackgroundColor = (e) => {
+		console.log(e.target.value);
+		setAttributes({ backgroundcolor: e.target.value });
 	};
 
 	return (
@@ -22,6 +27,11 @@ export default function Edit({ attributes, setAttributes }) {
 			<RichText {...useBlockProps({
 				className: `align-${alignment}`
 			})} tagName='h2' onChange={changeText} value={text} placeholder={__('add your text here', 'static-react-block')} />
+			<select value={backgroundcolor} className="align-center" onChange={changeBackgroundColor} >
+				<option value="green">green</option>
+				<option value="red">red</option>
+				<option value="blue" selected>blue</option>
+			</select>
 		</>
 	);
 }

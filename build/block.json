@@ -27,6 +27,10 @@
     "alignment": {
       "type": "string",
       "default": "left"
+    },
+    "backgroundcolor": {
+      "type": "string",
+      "default": "red"
     }
   }
 }
