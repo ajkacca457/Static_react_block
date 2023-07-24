@@ -59,18 +59,7 @@ function Edit({
     onChange: changeText,
     value: text,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('add your text here', 'static-react-block')
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("select", {
-    value: backgroundcolor,
-    className: "align-center",
-    onChange: changeBackgroundColor
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", {
-    value: "green"
-  }, "green"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", {
-    value: "red"
-  }, "red"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", {
-    value: "blue",
-    selected: true
-  }, "blue")));
+  }));
 }
 
 /***/ }),

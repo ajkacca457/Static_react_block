@@ -27,11 +27,6 @@ export default function Edit({ attributes, setAttributes }) {
 			<RichText {...useBlockProps({
 				className: `align-${alignment}`
 			})} tagName='h2' onChange={changeText} value={text} placeholder={__('add your text here', 'static-react-block')} />
-			<select value={backgroundcolor} className="align-center" onChange={changeBackgroundColor} >
-				<option value="green">green</option>
-				<option value="red">red</option>
-				<option value="blue" selected>blue</option>
-			</select>
 		</>
 	);
 }
