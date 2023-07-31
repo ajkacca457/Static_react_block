@@ -27,6 +27,10 @@
 		"backgroundcolor": {
 			"type": "string",
 			"default": "red"
+		},
+		"checkboxField": {
+			"type": "boolean",
+			"default": true
 		}
 	}
 }
