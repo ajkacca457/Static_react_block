@@ -7,7 +7,13 @@
   "category": "widgets",
   "description": "Example block scaffolded with Create Block tool.",
   "supports": {
-    "html": false
+    "html": false,
+    "color": true,
+    "backgroundColor": true,
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
   },
   "keywords": [
     "text",
@@ -32,7 +38,7 @@
       "type": "string",
       "default": "red"
     },
-    "checkboxField": {
+    "displayField": {
       "type": "boolean",
       "default": true
     }
