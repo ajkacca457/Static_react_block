@@ -1,12 +1,12 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, BlockControls, AlignmentToolbar, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, RichText, BlockControls, AlignmentToolbar, URLInputButton } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import './editor.scss';
 
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { heading, description, alignment, displayField } = attributes;
+	const { heading, description, alignment, displayField, buttonUrl, buttonText } = attributes;
 
 	const changeHeading = (newHeading) => {
 		setAttributes({ heading: newHeading });
@@ -18,6 +18,10 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const changeControl = (newAlignment) => {
 		setAttributes({ alignment: newAlignment });
+	};
+
+	const changeUrl = (url, post) => {
+		setAttributes({ buttonUrl: url, buttonText: (post && post.title) || 'Click' });
 	};
 
 	return (
@@ -34,6 +38,9 @@ export default function Edit({ attributes, setAttributes }) {
 				{displayField &&
 					<RichText tagName='p' onChange={changeDescription} value={description} placeholder={__('add your description here', 'static-react-block')} />
 				}
+
+				<URLInputButton url={buttonUrl} onChange={changeUrl} />
+
 			</div>
 		</>
 	);

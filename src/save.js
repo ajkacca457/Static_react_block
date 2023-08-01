@@ -3,14 +3,15 @@ import { Button } from '@wordpress/components';
 
 
 export default function save({ attributes }) {
-	const { heading, description, alignment } = attributes;
+	const { heading, description, alignment, buttonUrl, buttonText } = attributes;
 	return (
 		<>
 			<div {...useBlockProps.save({
 				className: `align-${alignment}`
 			})} >
 				<RichText.Content tagName='h2' value={heading} />
-				<RichText.Content tagName='p' value={description} />
+				<p>{description}</p>
+				<a href={buttonUrl} target='_blank'>{buttonText}</a>
 			</div>
 		</>
 	);

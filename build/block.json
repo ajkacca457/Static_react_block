@@ -42,13 +42,23 @@
       "type": "string",
       "default": "left"
     },
-    "backgroundcolor": {
+    "backgroundColor": {
       "type": "string",
-      "default": "red"
+      "default": "very-dark-gray"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "light-grayish-magenta"
     },
     "displayField": {
       "type": "boolean",
       "default": true
+    },
+    "buttonUrl": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
     }
   }
 }

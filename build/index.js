@@ -34,7 +34,9 @@ function Edit({
     heading,
     description,
     alignment,
-    displayField
+    displayField,
+    buttonUrl,
+    buttonText
   } = attributes;
   const changeHeading = newHeading => {
     setAttributes({
@@ -49,6 +51,12 @@ function Edit({
   const changeControl = newAlignment => {
     setAttributes({
       alignment: newAlignment
+    });
+  };
+  const changeUrl = (url, post) => {
+    setAttributes({
+      buttonUrl: url,
+      buttonText: post && post.title || 'Click'
     });
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
@@ -68,6 +76,9 @@ function Edit({
     onChange: changeDescription,
     value: description,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('add your description here', 'static-react-block')
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.URLInputButton, {
+    url: buttonUrl,
+    onChange: changeUrl
   })));
 }
 
@@ -157,7 +168,9 @@ function save({
   const {
     heading,
     description,
-    alignment
+    alignment,
+    buttonUrl,
+    buttonText
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
@@ -166,10 +179,10 @@ function save({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "h2",
     value: heading
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-    tagName: "p",
-    value: description
-  })));
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: buttonUrl,
+    target: "_blank"
+  }, buttonText)));
 }
 
 /***/ }),
@@ -254,7 +267,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":true,"backgroundColor":true,"spacing":{"margin":true,"padding":true},"fontSize":true},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2","default":"Static React Block"},"description":{"type":"string","source":"html","selector":"p","default":"This is a static react block."},"alignment":{"type":"string","default":"left"},"backgroundcolor":{"type":"string","default":"red"},"displayField":{"type":"boolean","default":true}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":true,"backgroundColor":true,"spacing":{"margin":true,"padding":true},"fontSize":true},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2","default":"Static React Block"},"description":{"type":"string","source":"html","selector":"p","default":"This is a static react block."},"alignment":{"type":"string","default":"left"},"backgroundColor":{"type":"string","default":"very-dark-gray"},"textColor":{"type":"string","default":"light-grayish-magenta"},"displayField":{"type":"boolean","default":true},"buttonUrl":{"type":"string"},"buttonText":{"type":"string"}}}');
 
 /***/ })
 
