@@ -6,17 +6,18 @@ import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { text, alignment, displayField } = attributes;
+	const { heading, description, alignment, displayField } = attributes;
 
-	const changeText = (newText) => {
-		setAttributes({ text: newText });
+	const changeHeading = (newHeading) => {
+		setAttributes({ heading: newHeading });
+	};
+
+	const changeDescription = (newDescription) => {
+		setAttributes({ description: newDescription });
 	};
 
 	const changeControl = (newAlignment) => {
 		setAttributes({ alignment: newAlignment });
-	};
-	const onChangeDisplayField = (newDisplayField) => {
-		setAttributes({ displayField: newDisplayField });
 	};
 
 	return (
@@ -27,11 +28,12 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...useBlockProps({
 				className: `align-${alignment}`
 			})}>
-				{displayField &&
-					<RichText tagName='h2' onChange={changeText} value={text} placeholder={__('add your text here', 'static-react-block')} />
-				}
 
-				<Button isSecondary>Hello</Button>
+				<RichText tagName='h2' onChange={changeHeading} value={heading} placeholder={__('add your text here', 'static-react-block')} />
+
+				{displayField &&
+					<RichText tagName='p' onChange={changeDescription} value={description} placeholder={__('add your description here', 'static-react-block')} />
+				}
 			</div>
 		</>
 	);

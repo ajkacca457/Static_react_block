@@ -21,10 +21,15 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
-		"text": {
+		"heading": {
 			"type": "string",
 			"source": "html",
 			"selector": "h2"
+		},
+		"description": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
 		},
 		"alignment": {
 			"type": "string",

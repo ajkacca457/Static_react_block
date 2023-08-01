@@ -31,23 +31,24 @@ function Edit({
   setAttributes
 }) {
   const {
-    text,
+    heading,
+    description,
     alignment,
     displayField
   } = attributes;
-  const changeText = newText => {
+  const changeHeading = newHeading => {
     setAttributes({
-      text: newText
+      heading: newHeading
+    });
+  };
+  const changeDescription = newDescription => {
+    setAttributes({
+      description: newDescription
     });
   };
   const changeControl = newAlignment => {
     setAttributes({
       alignment: newAlignment
-    });
-  };
-  const onChangeDisplayField = newDisplayField => {
-    setAttributes({
-      displayField: newDisplayField
     });
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
@@ -57,14 +58,17 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: `align-${alignment}`
     })
-  }, displayField && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
-    onChange: changeText,
-    value: text,
+    onChange: changeHeading,
+    value: heading,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('add your text here', 'static-react-block')
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    isSecondary: true
-  }, "Hello")));
+  }), displayField && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "p",
+    onChange: changeDescription,
+    value: description,
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('add your description here', 'static-react-block')
+  })));
 }
 
 /***/ }),
@@ -151,7 +155,8 @@ function save({
   attributes
 }) {
   const {
-    text,
+    heading,
+    description,
     alignment
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -160,8 +165,11 @@ function save({
     })
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "h2",
-    value: text
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", null, "Hello wordpress")));
+    value: heading
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: "p",
+    value: description
+  })));
 }
 
 /***/ }),
@@ -246,7 +254,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":true,"backgroundColor":true,"spacing":{"margin":true,"padding":true}},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"h2"},"alignment":{"type":"string","default":"left"},"backgroundcolor":{"type":"string","default":"red"},"displayField":{"type":"boolean","default":true}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":true,"backgroundColor":true,"spacing":{"margin":true,"padding":true}},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2"},"description":{"type":"string","source":"html","selector":"p"},"alignment":{"type":"string","default":"left"},"backgroundcolor":{"type":"string","default":"red"},"displayField":{"type":"boolean","default":true}}}');
 
 /***/ })
 
