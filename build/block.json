@@ -11,8 +11,8 @@
     "color": true,
     "backgroundColor": true,
     "spacing": {
-      "padding": true,
-      "margin": true
+      "margin": true,
+      "padding": true
     }
   },
   "keywords": [

@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText, BlockControls, AlignmentToolbar, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { Button } from '@wordpress/components';
 import './editor.scss';
 
 
@@ -21,25 +21,18 @@ export default function Edit({ attributes, setAttributes }) {
 
 	return (
 		<>
-			<InspectorControls>
-				<PanelBody title={__('Display Setting', 'static-react-block')}>
-					<ToggleControl
-						label="Display text"
-						checked={displayField}
-						onChange={onChangeDisplayField}
-					/>
-				</PanelBody>
-			</InspectorControls>
-
 			<BlockControls>
 				<AlignmentToolbar onChange={changeControl} value={alignment} />
 			</BlockControls>
+			<div {...useBlockProps({
+				className: `align-${alignment}`
+			})}>
+				{displayField &&
+					<RichText tagName='h2' onChange={changeText} value={text} placeholder={__('add your text here', 'static-react-block')} />
+				}
 
-			{displayField &&
-				<RichText {...useBlockProps({
-					className: `align-${alignment}`
-				})} tagName='h2' onChange={changeText} value={text} placeholder={__('add your text here', 'static-react-block')} />
-			}
+				<Button isSecondary>Hello</Button>
+			</div>
 		</>
 	);
 }

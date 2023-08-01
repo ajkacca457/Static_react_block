@@ -1,13 +1,17 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 
 
 export default function save({ attributes }) {
 	const { text, alignment } = attributes;
 	return (
 		<>
-			<RichText.Content {...useBlockProps.save({
+			<div {...useBlockProps.save({
 				className: `align-${alignment}`
-			})} tagName='h2' value={text} />
+			})} >
+				<RichText.Content tagName='h2' value={text} />
+				<button>Hello wordpress</button>
+			</div>
 		</>
 	);
 }
