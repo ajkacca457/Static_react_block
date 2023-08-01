@@ -13,7 +13,8 @@
 		"spacing": {
 			"margin": true,
 			"padding": true
-		}
+		},
+		"fontSize": true
 	},
 	"keywords": [ "text", "paragraph", "nested" ],
 	"textdomain": "static-react-block",
