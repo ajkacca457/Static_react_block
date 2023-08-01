@@ -13,6 +13,22 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.wp-block-create-block-static-react-block a {
+  color: white;
+  text-decoration: none;
+  background-color: brown;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.wp-block-create-block-static-react-block a:visited {
+  color: white;
+}
+.wp-block-create-block-static-react-block a:active {
+  color: white;
+}
+.wp-block-create-block-static-react-block a:focus {
+  color: white;
+}
 
 .align-left {
   text-align: left;
