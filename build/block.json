@@ -70,6 +70,12 @@
       "source": "attribute",
       "attribute": "target",
       "selector": "a"
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "padding": "10px"
+      }
     }
   }
 }
