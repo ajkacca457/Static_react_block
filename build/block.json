@@ -29,12 +29,14 @@
     "heading": {
       "type": "string",
       "source": "html",
-      "selector": "h2"
+      "selector": "h2",
+      "default": "Static React Block"
     },
     "description": {
       "type": "string",
       "source": "html",
-      "selector": "p"
+      "selector": "p",
+      "default": "This is a static react block."
     },
     "alignment": {
       "type": "string",
