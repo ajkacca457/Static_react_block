@@ -14,11 +14,14 @@
   margin: 0 auto;
 }
 .wp-block-create-block-static-react-block a {
+  background-color: #008CBA;
+  border: none;
   color: white;
-  text-decoration: none;
-  background-color: brown;
   padding: 5px 15px;
-  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 .wp-block-create-block-static-react-block a:visited {
   color: white;
