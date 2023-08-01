@@ -11,7 +11,7 @@ export default function save({ attributes }) {
 			})} >
 				<RichText.Content tagName='h2' value={heading} />
 				<p>{description}</p>
-				<a href={buttonUrl} target='_blank'>{buttonText}</a>
+				<a href={buttonUrl} target='_blank' rel="noopener">{buttonText}</a>
 			</div>
 		</>
 	);

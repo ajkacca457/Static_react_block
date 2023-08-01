@@ -36,7 +36,7 @@ function Edit({
     alignment,
     displayField,
     buttonUrl,
-    buttonText
+    buttonTarget
   } = attributes;
   const changeHeading = newHeading => {
     setAttributes({
@@ -78,7 +78,8 @@ function Edit({
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('add your description here', 'static-react-block')
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.URLInputButton, {
     url: buttonUrl,
-    onChange: changeUrl
+    onChange: changeUrl,
+    target: buttonTarget
   })));
 }
 
@@ -181,7 +182,8 @@ function save({
     value: heading
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: buttonUrl,
-    target: "_blank"
+    target: "_blank",
+    rel: "noopener"
   }, buttonText)));
 }
 
@@ -267,7 +269,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":true,"backgroundColor":true,"spacing":{"margin":true,"padding":true},"fontSize":true},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2","default":"Static React Block"},"description":{"type":"string","source":"html","selector":"p","default":"This is a static react block."},"alignment":{"type":"string","default":"left"},"backgroundColor":{"type":"string","default":"very-dark-gray"},"textColor":{"type":"string","default":"light-grayish-magenta"},"displayField":{"type":"boolean","default":true},"buttonUrl":{"type":"string"},"buttonText":{"type":"string"}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":true,"backgroundColor":true,"spacing":{"margin":true,"padding":true},"fontSize":true},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2","default":"Static React Block"},"description":{"type":"string","source":"html","selector":"p","default":"This is a static react block."},"alignment":{"type":"string","default":"left"},"backgroundColor":{"type":"string","default":"very-dark-gray"},"textColor":{"type":"string","default":"light-grayish-magenta"},"displayField":{"type":"boolean","default":true},"buttonUrl":{"type":"string","source":"attribute","attribute":"href","selector":"a"},"buttonText":{"type":"string","source":"html","selector":"a"},"buttonTarget":{"type":"string","source":"attribute","attribute":"target","selector":"a"}}}');
 
 /***/ })
 

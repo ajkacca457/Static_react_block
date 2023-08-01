@@ -55,10 +55,21 @@
       "default": true
     },
     "buttonUrl": {
-      "type": "string"
+      "type": "string",
+      "source": "attribute",
+      "attribute": "href",
+      "selector": "a"
     },
     "buttonText": {
-      "type": "string"
+      "type": "string",
+      "source": "html",
+      "selector": "a"
+    },
+    "buttonTarget": {
+      "type": "string",
+      "source": "attribute",
+      "attribute": "target",
+      "selector": "a"
     }
   }
 }

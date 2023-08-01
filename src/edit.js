@@ -6,7 +6,7 @@ import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { heading, description, alignment, displayField, buttonUrl, buttonText } = attributes;
+	const { heading, description, alignment, displayField, buttonUrl, buttonTarget } = attributes;
 
 	const changeHeading = (newHeading) => {
 		setAttributes({ heading: newHeading });
@@ -39,7 +39,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<RichText tagName='p' onChange={changeDescription} value={description} placeholder={__('add your description here', 'static-react-block')} />
 				}
 
-				<URLInputButton url={buttonUrl} onChange={changeUrl} />
+				<URLInputButton url={buttonUrl} onChange={changeUrl} target={buttonTarget} />
 
 			</div>
 		</>
