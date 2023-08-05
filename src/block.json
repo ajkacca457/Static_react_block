@@ -8,8 +8,10 @@
 	"description": "Example block scaffolded with Create Block tool.",
 	"supports": {
 		"html": false,
-		"color": true,
-		"backgroundColor": true,
+		"color":{
+			"background": true,
+			"text": true
+		},
 		"spacing": {
 			"margin": true,
 			"padding": true
@@ -39,12 +41,10 @@
 			"default": "left"
 		},
 		"backgroundColor": {
-			"type": "string",
-			"default": "very-dark-gray"
+			"type": "string"
 		},
 		"textColor": {
-			"type": "string",
-			"default": "light-grayish-magenta"
+			"type": "string"		
 		},
 		"displayField": {
 			"type": "boolean",
@@ -70,7 +70,11 @@
 		"style": {
 			"type": "object",
 			"default": {
-				"padding": "10px"
+				"padding": "10px",
+				"color":{
+					"background":"#fcb900",
+					"text":"#000000"
+				}
 			}
 		}
 	}
