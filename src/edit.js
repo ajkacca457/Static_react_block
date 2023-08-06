@@ -1,16 +1,17 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText, BlockControls, AlignmentToolbar, URLInputButton, InspectorControls } from '@wordpress/block-editor';
-import { ToggleControl,PanelBody} from '@wordpress/components';
+import { ToggleControl,PanelBody,RangeControl} from '@wordpress/components';
 import classNames from "classnames";
 import './editor.scss';
 
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { heading, description, alignment, displayField, buttonUrl, buttonTarget, showShadow } = attributes;
+	const { heading, description, alignment, displayField, buttonUrl, buttonTarget, showShadow, shadowOpacity } = attributes;
 
 	const classes= classNames(`align-${alignment}`, {
-		"has-shadow":showShadow
+		"has-shadow":showShadow,
+		[`shadow-opacity-${shadowOpacity}`]:showShadow && shadowOpacity
 	})
 
 
@@ -35,6 +36,11 @@ export default function Edit({ attributes, setAttributes }) {
 	const changeShadowDisplay= ()=>{
 		setAttributes({showShadow:!showShadow});
 	}
+	const changeShadowOpacity=( newOpacity ) => {
+		setAttributes({
+			shadowOpacity:newOpacity
+		})
+	}
 
 	return (
 		<>
@@ -46,6 +52,16 @@ export default function Edit({ attributes, setAttributes }) {
 					 checked={ displayField }
 					 onChange={changeSubtitleDisplay}
 					 />
+
+				{showShadow && <RangeControl
+					label={__("Opacity control", "static-react-block")}
+					value={shadowOpacity}
+					min={10}
+					max={40}
+					onChange={changeShadowOpacity}
+					step={10}
+				/>}
+
 				</PanelBody>
 			</InspectorControls>
 

@@ -3,9 +3,10 @@ import classNames from 'classnames';
 
 
 export default function save({ attributes }) {
-	const { heading, description, alignment, buttonUrl, buttonText,showShadow } = attributes;
+	const { heading, description, alignment, buttonUrl, buttonText,showShadow,shadowOpacity } = attributes;
 	const classes= classNames(`align-${alignment}`, {
-		"has-shadow":showShadow
+		"has-shadow":showShadow,
+		[`shadow-opacity-${shadowOpacity}`]:showShadow && shadowOpacity
 	})
 
 	return (

@@ -40,10 +40,12 @@ function Edit({
     displayField,
     buttonUrl,
     buttonTarget,
-    showShadow
+    showShadow,
+    shadowOpacity
   } = attributes;
   const classes = classnames__WEBPACK_IMPORTED_MODULE_4___default()(`align-${alignment}`, {
-    "has-shadow": showShadow
+    "has-shadow": showShadow,
+    [`shadow-opacity-${shadowOpacity}`]: showShadow && shadowOpacity
   });
   const changeHeading = newHeading => {
     setAttributes({
@@ -76,10 +78,22 @@ function Edit({
       showShadow: !showShadow
     });
   };
+  const changeShadowOpacity = newOpacity => {
+    setAttributes({
+      shadowOpacity: newOpacity
+    });
+  };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sub-title Display', 'static-react-block'),
     checked: displayField,
     onChange: changeSubtitleDisplay
+  }), showShadow && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Opacity control", "static-react-block"),
+    value: shadowOpacity,
+    min: 10,
+    max: 40,
+    onChange: changeShadowOpacity,
+    step: 10
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
     controls: [{
       icon: "art",
@@ -202,10 +216,12 @@ function save({
     alignment,
     buttonUrl,
     buttonText,
-    showShadow
+    showShadow,
+    shadowOpacity
   } = attributes;
   const classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(`align-${alignment}`, {
-    "has-shadow": showShadow
+    "has-shadow": showShadow,
+    [`shadow-opacity-${shadowOpacity}`]: showShadow && shadowOpacity
   });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
@@ -380,7 +396,7 @@ module.exports = window["wp"]["i18n"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":{"background":true,"text":true},"spacing":{"margin":true,"padding":true},"fontSize":true},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2","default":"Static React Block"},"description":{"type":"string","source":"html","selector":"p","default":"This is a static react block."},"alignment":{"type":"string","default":"left"},"backgroundColor":{"type":"string"},"textColor":{"type":"string"},"displayField":{"type":"boolean","default":true},"showShadow":{"type":"boolean","default":false},"buttonUrl":{"type":"string","source":"attribute","attribute":"href","selector":"a"},"buttonText":{"type":"string","source":"html","selector":"a"},"buttonTarget":{"type":"string","source":"attribute","attribute":"target","selector":"a"},"style":{"type":"object","default":{"padding":"10px","color":{"background":"#fcb900","text":"#000000"}}}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/static-react-block","version":"0.1.0","title":"Static React Block","category":"widgets","description":"Example block scaffolded with Create Block tool.","supports":{"html":false,"color":{"background":true,"text":true},"spacing":{"margin":true,"padding":true},"fontSize":true},"keywords":["text","paragraph","nested"],"textdomain":"static-react-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","source":"html","selector":"h2","default":"Static React Block"},"description":{"type":"string","source":"html","selector":"p","default":"This is a static react block."},"alignment":{"type":"string","default":"left"},"backgroundColor":{"type":"string"},"textColor":{"type":"string"},"displayField":{"type":"boolean","default":true},"showShadow":{"type":"boolean","default":false},"shadowOpacity":{"type":"number","default":10},"buttonUrl":{"type":"string","source":"attribute","attribute":"href","selector":"a"},"buttonText":{"type":"string","source":"html","selector":"a"},"buttonTarget":{"type":"string","source":"attribute","attribute":"target","selector":"a"},"style":{"type":"object","default":{"padding":"10px","color":{"background":"#fcb900","text":"#000000"}}}}}');
 
 /***/ })
 

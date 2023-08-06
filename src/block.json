@@ -54,6 +54,10 @@
 			"type": "boolean",
 			"default": false
 		},
+		"shadowOpacity":{
+			"type":"number",
+			"default":10
+		},
 		"buttonUrl": {
 			"type": "string",
 			"source": "attribute",
