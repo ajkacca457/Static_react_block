@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, BlockControls, AlignmentToolbar, URLInputButton } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import { useBlockProps, RichText, BlockControls, AlignmentToolbar, URLInputButton, InspectorControls } from '@wordpress/block-editor';
+import { ToggleControl,PanelBody} from '@wordpress/components';
 import './editor.scss';
 
 
@@ -23,9 +23,23 @@ export default function Edit({ attributes, setAttributes }) {
 	const changeUrl = (url, post) => {
 		setAttributes({ buttonUrl: url, buttonText: (post && post.title) || 'Click' });
 	};
+	const changeSubtitleDisplay= (value)=>{
+		setAttributes({displayField:value});
+	}
 
 	return (
 		<>
+
+			<InspectorControls>
+				<PanelBody>
+					<ToggleControl
+					 label={__('Sub-title Display', 'static-react-block')}
+					 checked={ displayField }
+					 onChange={changeSubtitleDisplay}
+					 />
+				</PanelBody>
+			</InspectorControls>
+
 			<BlockControls>
 				<AlignmentToolbar onChange={changeControl} value={alignment} />
 			</BlockControls>
