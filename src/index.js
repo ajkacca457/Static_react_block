@@ -54,6 +54,21 @@ registerBlockType(metadata.name, {
 				}
 			}
 		],
-		to:[]
+		to:[
+			{
+				type:"block",
+				blocks:["core/paragraph"],
+				isMatch:({description,displayField})=>{
+					return description && displayField?true:false
+				},
+				transform:({description,alignment})=>{
+					return createBlock("core/paragraph", {
+						content:description,
+						align:alignment,
+					})
+				}
+			}
+
+		]
 	}
 });

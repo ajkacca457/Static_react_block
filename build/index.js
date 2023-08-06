@@ -197,7 +197,25 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     }],
-    to: []
+    to: [{
+      type: "block",
+      blocks: ["core/paragraph"],
+      isMatch: ({
+        description,
+        displayField
+      }) => {
+        return description && displayField ? true : false;
+      },
+      transform: ({
+        description,
+        alignment
+      }) => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("core/paragraph", {
+          content: description,
+          align: alignment
+        });
+      }
+    }]
   }
 });
 
