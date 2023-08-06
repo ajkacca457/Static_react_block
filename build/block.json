@@ -54,6 +54,10 @@
       "type": "boolean",
       "default": true
     },
+    "showShadow": {
+      "type": "boolean",
+      "default": false
+    },
     "buttonUrl": {
       "type": "string",
       "source": "attribute",

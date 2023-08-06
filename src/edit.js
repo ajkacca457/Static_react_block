@@ -1,12 +1,18 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText, BlockControls, AlignmentToolbar, URLInputButton, InspectorControls } from '@wordpress/block-editor';
 import { ToggleControl,PanelBody} from '@wordpress/components';
+import classNames from "classnames";
 import './editor.scss';
 
 
 export default function Edit({ attributes, setAttributes }) {
 
-	const { heading, description, alignment, displayField, buttonUrl, buttonTarget } = attributes;
+	const { heading, description, alignment, displayField, buttonUrl, buttonTarget, showShadow } = attributes;
+
+	const classes= classNames(`align-${alignment}`, {
+		"has-shadow":showShadow
+	})
+
 
 	const changeHeading = (newHeading) => {
 		setAttributes({ heading: newHeading });
@@ -25,6 +31,9 @@ export default function Edit({ attributes, setAttributes }) {
 	};
 	const changeSubtitleDisplay= (value)=>{
 		setAttributes({displayField:value});
+	};
+	const changeShadowDisplay= ()=>{
+		setAttributes({showShadow:!showShadow});
 	}
 
 	return (
@@ -40,11 +49,18 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 
-			<BlockControls>
+			<BlockControls controls={[
+				{
+					icon:"art",
+					title:__("shadow property","static-react-block"),
+					onClick:changeShadowDisplay,
+					isActive:showShadow
+				}
+			]}>
 				<AlignmentToolbar onChange={changeControl} value={alignment} />
 			</BlockControls>
 			<div {...useBlockProps({
-				className: `align-${alignment}`
+				className: classes
 			})}>
 
 				<RichText tagName='h2' onChange={changeHeading} value={heading} placeholder={__('add your text here', 'static-react-block')} />

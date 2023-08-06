@@ -1,13 +1,17 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import classNames from 'classnames';
 
 
 export default function save({ attributes }) {
-	const { heading, description, alignment, buttonUrl, buttonText } = attributes;
+	const { heading, description, alignment, buttonUrl, buttonText,showShadow } = attributes;
+	const classes= classNames(`align-${alignment}`, {
+		"has-shadow":showShadow
+	})
+
 	return (
 		<>
 			<div {...useBlockProps.save({
-				className: `align-${alignment}`
+				className: classes
 			})} >
 				<RichText.Content tagName='h2' value={heading} />
 				<p>{description}</p>
