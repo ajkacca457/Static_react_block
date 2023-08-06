@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Static React Block
- * Description:       Example block scaffolded with Create Block tool.
+ * Description:       Block for using texts.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0

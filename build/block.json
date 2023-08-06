@@ -30,6 +30,17 @@
       "isDefault": false
     }
   ],
+  "example": {
+    "attributes": {
+      "heading": "This is an example",
+      "description": "This is lorem ipsum text for the example block",
+      "alignment": "left",
+      "displayField": true,
+      "showShadow": true,
+      "background": "#fcb900",
+      "text": "#000000"
+    }
+  },
   "keywords": [
     "text",
     "paragraph",
