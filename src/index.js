@@ -31,9 +31,7 @@ registerBlockType(metadata.name, {
 	 * @see ./edit.js
 	 */
 	icon: {
-		src: 'smiley',
-		background: '#f03',
-		foreground: '#fff',
+		src: 'text',
 	},
 	edit: Edit,
 

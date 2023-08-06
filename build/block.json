@@ -18,6 +18,18 @@
     },
     "fontSize": true
   },
+  "styles": [
+    {
+      "name": "squared",
+      "label": "Squared",
+      "isDefault": true
+    },
+    {
+      "name": "rounded",
+      "label": "Rounded",
+      "isDefault": false
+    }
+  ],
   "keywords": [
     "text",
     "paragraph",
