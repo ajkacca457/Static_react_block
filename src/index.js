@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-import { registerBlockType } from '@wordpress/blocks';
+import { registerBlockType, createBlock } from '@wordpress/blocks';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -39,4 +39,21 @@ registerBlockType(metadata.name, {
 	 * @see ./save.js
 	 */
 	save,
+	transforms:{
+		from :[
+			{
+				type:"block",
+				blocks:["core/paragraph"],
+				transform:({content,align})=>{
+					return createBlock("create-block/static-react-block", {
+						heading:"paragraph",
+						description:content,
+						alignment:align,
+						displayField:true
+					})
+				}
+			}
+		],
+		to:[]
+	}
 });

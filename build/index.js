@@ -180,7 +180,25 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./save.js
    */
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"],
+  transforms: {
+    from: [{
+      type: "block",
+      blocks: ["core/paragraph"],
+      transform: ({
+        content,
+        align
+      }) => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("create-block/static-react-block", {
+          heading: "paragraph",
+          description: content,
+          alignment: align,
+          displayField: true
+        });
+      }
+    }],
+    to: []
+  }
 });
 
 /***/ }),
